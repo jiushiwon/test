@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 提交订单后会直接跳转到支付宝官方支付页面
+	中间跳过若干确认页面 -->
+	<form id="alipaysubmit" name="alipaysubmit" action="https://mapi.alipay.com/gateway.do?_input_charset=UTF-8" method="get">
+		<input type="hidden" name="subject" value="注册量购买" />
+		<input type="hidden" name="sign_type" value="MD5" />
+		<input type="hidden" name="notify_url" value="http://canevent.com/jsp/alipayb/canevent_alipay_notify_url.jsp" />
+		<input type="hidden" name="out_trade_no" value="LO1706290330339714" />
+		<input type="hidden" name="return_url" value="http://canevent.com/alipay/canevent_alipay_return_url" />
+		<input type="hidden" name="sign" value="5651967c0032e67004a1c4e282dc9b24" />
+		<input type="hidden" name="_input_charset" value="UTF-8" />
+		<input type="hidden" name="royalty_type" value="10" />
+		<input type="hidden" name="total_fee" value="15000.0" />
+		<input type="hidden" name="service" value="create_direct_pay_by_user" />
+		<input type="hidden" name="partner" value="2088801814011226" />
+		<input type="hidden" name="seller_email" value="george.mo@links-e.com" />
+		<input type="hidden" name="key" value="q6r18568fhioplk9f46entoxv511w94e" />
+		<input type="hidden" name="payment_type" value="1" />
+		<input type="hidden" name="show_url" value="http://canevent.com" />
+		<input type="submit" value="确认" style="display: none;">
+	</form>
+	<script>
+		document.forms['alipaysubmit'].submit();
+	</script>
+</body>
+</html>

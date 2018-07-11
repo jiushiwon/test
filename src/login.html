@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#select_login").click(function(){
+		$("#login").css("display","block");
+		$("#register").css("display","none");
+	});
+	$("#select_register").click(function(){
+		$("#login").css("display","none");
+		$("#register").css("display","block");
+	});
+})
+</script>
+<style type="text/css">
+#container{
+	border:1px solid grey;
+	border-radius:5px;
+	width: 500px;
+	height: 300px;
+	box-shadow: 2px 2px 2px grey;
+
+}
+#pic{
+	float:left;
+	width: 100px;
+	height: 100px;
+	margin-top: 60px;
+	border:1px solid grey;
+	margin-left: 40px
+}
+#login{
+	margin-top: 45px;
+	margin-left: 170px
+}
+#register{
+	margin-top: 20px;
+	display: none;
+	margin-left: 170px
+}
+#select{
+	margin-left: 168px;
+}
+input{
+	margin-top: 40px;
+}
+.select_text_container{
+	font-size:15px;
+	width: 250px;
+	margin-top: 15px;
+/* 	border:1px solid grey; */
+/* 	border-radius:0 5px 5px 0; */
+	height: 40px;
+}
+
+a{
+	text-decoration: none;
+}
+.select_container{
+	background:	#C9C9C9;
+	border:1px solid grey;
+	width: 140px;
+	height: 40px;
+	margin-left: 3px;
+	color: blue;
+	font-size: 15px;
+}
+.login_usr{
+	background:	#C9C9C9;
+	float:left;
+	width: 50px;
+	height: 46px;
+	margin-top: 15px;
+/* 	border-left:1px solid grey;
+	border-top:1px solid grey;
+	border-bottom:1px solid grey; */
+	text-align: center;
+}
+#pic_usr{
+	width: 48px;
+	height: 48px;
+}
+#pic_password{
+	width: 40px;
+	height: 40px;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+	
+		<div id="pic"><img alt="" src=""></div>
+		<div id= "login">		
+			<div class="login_usr"><img id="pic_usr" alt="" src="钥匙.png"></div><input type = "text" value="" class="select_text_container">
+			<div class="login_usr"><img id="pic_password" alt="" src="密码.png"></div><input type = "text" value="" class="select_text_container">
+		</div>
+		<div id= "register">
+			<input type = "text" value="" class="select_text_container">
+			<input type = "text" value="" class="select_text_container">
+			<input type = "text" value="" class="select_text_container">
+		</div>
+		
+		<div id="select">
+			<input type = "button" value="登录" id = "select_login" class="select_container">
+			<input type = "button" value="注册"  id = "select_register" class="select_container">
+		</div>
+	</div>
+	
+</body>
+</html>

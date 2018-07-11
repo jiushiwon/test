@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<style type="text/css">
+#s1{
+border: 1px solid grey;
+background: red;
+width: 200px;
+height: 200px;
+}
+#s2{
+border: 1px solid grey;
+background: green;
+width: 100px;
+height: 100px;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#test").click(function(){
+		
+		//$("#s1").css("background","transparent");
+		$("#s2").css("background","transparent");
+	})
+})
+
+
+</script>
+</head>
+<body>
+<input type ="button" value = "dianji" id="test">
+<div id="s1">
+	<div id="s2"></div>
+</div>
+</body>
+</html>

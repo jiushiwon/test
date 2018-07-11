@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setInterval("mytest()",3000);
+});
+function mytest(){
+	/* var text = parseInt($("#source_code").text());
+	var nextText =text+1;
+	$("#source_code").text(nextText); */
+	var title = null;
+	$(".download_info").each(function(){
+		var display = $(this).css("display");
+		if(display=="block"){
+			$(this).css("display","none");
+			title = parseInt($(this).attr("title"));
+		}
+	});
+	if(title==3){
+		// $("#source_code").show("fast");
+		// $("#source_code").fadeIn("slow");
+ 		
+		 $("#source_code").css("display","block");
+		 $("#source_code").animate({left:"-1800px"},650); 
+	}else if(title==1){
+		//$("#tools").show("fast");
+		//$("#tools").fadeIn("slow");
+ 
+		$("#tools").css("display","block");
+		 $("#tools").animate({left:"-1800px"},650); 
+	}else if(title==2){
+		//$("#demo").show("fast");
+		//$("#demo").fadeIn("slow");
+		//$("#demo").css("width","0");
+		$("#demo").css("display","block");
+		$("#demo").animate({left:"-1800px"},650); 
+	}
+}
+</script>
+<style type="text/css">
+.download_info{
+	width: 1800px;
+	height: 50px;
+	border: 1px solid grey;
+	float: left;
+	position: absolute;
+}
+#source_code{
+background:black;
+display: block;
+}
+#tools{
+background:red;
+margin-left:1800px;
+display: none;
+}
+#demo{
+background:green;
+margin-left:1800px;
+display: none;
+}
+#container{
+width: 600px;
+height: 400px;
+border: 1px solid grey
+}
+</style>
+</head>
+<body>
+
+<div id="source_code" title="1" class="download_info">源码</div>
+<div id="tools"	title="2" class="download_info">工具下载</div>
+<div id="demo"	title="3" class="download_info">示例下载</div>
+
+</body>
+</html>

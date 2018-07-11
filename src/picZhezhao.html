@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<style type="text/css">
+#pic_position{
+	width: 400px;
+	height: 400px;
+	border: 1px solid grey;
+	left: 30%;
+	position: absolute;
+}
+#zhezhao_position{
+
+}
+#cut_position{
+	width: 200px;
+	height: 200px;
+	border: 1px dashed blue;
+	position:absolute;
+	top:200px
+}
+#img{
+	width: 400px;
+	height: 400px;
+	z-index: 503;
+}
+</style>
+</head>
+<body>
+<input type ="file" name="图片" value = "图片" id="files">
+
+<div id="pic_position">
+	<img alt="" src="" id="img">
+	<div id="cut_position"></div>
+	<div id="zhezhao_position"></div>
+</div>
+
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#files").change(function(){	
+		var file = document.getElementById("files").files[0];
+		//var file = document.getElementById("file"); cifangfa buzhengque
+		var name = file.name;
+		var size = file.size;
+		var reader = new FileReader();
+		reader.onload= function () {
+			var url= reader.result;
+	        $('#img').attr('src', url);
+	    };
+	    reader.readAsDataURL(file);
+	    createZhezhao("400px","402px","30px","30%");
+	    //$("#cut_position").css("z-index",2);
+	    
+	});
+	
+	function createZhezhao(zWidth,zHeight,zTop,zLeft){
+	
+		var mybg = document.createElement("div");
+		
+		mybg.setAttribute("id", "mybg");
+		mybg.style.background = "grey";
+
+		mybg.style.width = zWidth;
+		mybg.style.height = zHeight;
+		mybg.style.position = "absolute";
+		mybg.style.top = zTop;
+		mybg.style.left = zLeft;
+		mybg.style.zIndex = "1";
+		mybg.style.opacity = "0.6";
+		mybg.style.filter = "Alpha(opacity=30)";
+		
+		document.body.appendChild(mybg);
+	}
+});
+</script>
+
+</html>
